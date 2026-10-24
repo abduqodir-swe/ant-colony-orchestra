@@ -2,6 +2,7 @@
   "name": "ant-colony-server",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "Mastra backend for the Ant Colony office: PM + specialist agents, approvals, SQLite event log, SSE",
   "type": "module",
   "engines": {
