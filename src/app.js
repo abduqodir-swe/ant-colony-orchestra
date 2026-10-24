@@ -3,6 +3,7 @@
 import { createOffice, drawOffice } from './office/scene.js';
 import { WIDTH, HEIGHT } from './office/map.js';
 import { Colony } from './dashboard/sim.js';
+import { LiveColony, probeServer } from './dashboard/live.js';
 import { mountDashboard } from './dashboard/ui.js';
 import { STATUS } from './dashboard/data.js';
 
@@ -16,7 +17,10 @@ const sg = scene.getContext('2d');
 sg.imageSmoothingEnabled = false;
 
 const office = createOffice();
-const colony = new Colony(office.agents);
+// With the backend running (server/), the office shows real agents; otherwise it plays the demo.
+const health = await probeServer();
+const colony = health ? new LiveColony(office.agents, health) : new Colony(office.agents);
+if (health) colony.connect();
 let hover = null;
 let selected = office.agents.find((a) => a.id === 'backend_01') || null;
 

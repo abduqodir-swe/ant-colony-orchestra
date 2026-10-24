@@ -43,6 +43,12 @@
         <div class="scene-wrap" id="scene-wrap">
           <canvas id="office"></canvas>
         </div>
+        <form class="pm-console" id="pm-form" autocomplete="off">
+          <span class="pm-label">PM</span>
+          <input id="pm-input" type="text" maxlength="4000" placeholder="Задача для PM, например: сделай health-эндпоинт с тестами и задеплой на staging" aria-label="Задача для PM" />
+          <button type="submit">Отправить</button>
+          <span class="pm-state" id="pm-state" aria-live="polite"></span>
+        </form>
       </section>
 
       <aside class="side">

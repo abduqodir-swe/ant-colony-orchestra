@@ -124,6 +124,25 @@ export class Agent {
     return true;
   }
 
+  // Live mode: an ant with work heads back to its desk and stays there until it is idle again.
+  setBusy(busy) {
+    this.busy = busy;
+    if (!busy || this.state === 'work') return;
+    if (this.state === 'walk') {
+      if (this.target === this.seat) return;
+      // turn around mid-walk: path from where the ant is now, and free the spot it was heading to
+      if (this.spot) this.spot.taken = null;
+      this.spot = null;
+      this.goTo(this.seat);
+      return;
+    }
+    const spot = this.spot;
+    if (this.goTo(this.seat) && spot) {
+      spot.taken = null;
+      this.spot = null;
+    }
+  }
+
   update(dt) {
     this.clock += dt;
     if (this.state === 'walk') {
@@ -161,7 +180,7 @@ export class Agent {
     if (this.timer > 0) return;
     if (this.state === 'work') {
       const free = this.world.spots.filter((s) => !s.taken);
-      if (free.length && Math.random() < (this.status === 'idle' ? 0.6 : 0.18)) {
+      if (!this.busy && free.length && Math.random() < (this.status === 'idle' ? 0.6 : 0.18)) {
         const s = free[Math.floor(Math.random() * free.length)];
         if (this.goTo(s)) {
           s.taken = this;

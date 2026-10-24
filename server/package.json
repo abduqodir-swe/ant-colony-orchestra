@@ -1,0 +1,26 @@
+{
+  "name": "ant-colony-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mastra backend for the Ant Colony office: PM + specialist agents, approvals, SQLite event log, SSE",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/index.ts",
+    "mock": "ANT_MODE=mock node --disable-warning=ExperimentalWarning src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@mastra/core": "^1.79.0",
+    "@mastra/libsql": "^1.27.0",
+    "@mastra/memory": "^1.39.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^7.0.2"
+  }
+}

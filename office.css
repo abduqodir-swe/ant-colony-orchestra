@@ -128,6 +128,24 @@ select {
   color: var(--bad);
 }
 
+.chip.demo {
+  color: var(--muted);
+}
+
+.chip.demo .dot {
+  background: var(--muted);
+  box-shadow: none;
+}
+
+.chip.off {
+  color: var(--bad);
+}
+
+.chip.off .dot {
+  background: var(--bad);
+  box-shadow: 0 0 6px var(--bad);
+}
+
 .pill {
   color: var(--text);
 }
@@ -552,14 +570,25 @@ select:hover {
 }
 
 .task h3 {
+  display: -webkit-box;
   margin: 0 0 3px;
+  overflow: hidden;
   font-size: 14px;
   font-weight: 600;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .task p {
   margin: 0 0 12px;
+  overflow: hidden;
   color: var(--muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task > div:first-child {
+  min-width: 0;
 }
 
 .meta {
@@ -669,6 +698,93 @@ select:hover {
 .sys canvas {
   width: 100%;
   height: 16px;
+}
+
+/* ---- PM console ---- */
+
+.pm-console {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min(760px, calc(100% - 24px));
+  margin: 0 auto 10px;
+  padding: 6px 6px 6px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.pm-label {
+  color: var(--accent);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.pm-console input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 4px;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.pm-console input::placeholder {
+  color: var(--faint);
+}
+
+.pm-console button {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pm-console button:disabled,
+.pm-console input:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pm-state {
+  max-width: 180px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 10.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pm-state.bad {
+  color: var(--bad);
+}
+
+.req .owner {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 10.5px;
+}
+
+.pstate {
+  width: 40px;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-align: right;
+  color: var(--faint);
+}
+
+.pstate.doing {
+  color: var(--warn);
+}
+
+.pstate.done {
+  color: var(--ok);
 }
 
 /* ---- narrow screens ---- */

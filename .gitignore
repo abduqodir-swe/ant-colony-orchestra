@@ -1,3 +1,9 @@
 .DS_Store
 node_modules/
 .claude/settings.local.json
+
+# backend runtime state and secrets
+server/.env
+server/data/
+server/workspace/
+server/.sandbox-profiles/

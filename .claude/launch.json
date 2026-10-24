@@ -5,6 +5,11 @@
       "name": "ant-colony",
       "url": "http://127.0.0.1:4173",
       "port": 4173
+    },
+    {
+      "name": "colony-server",
+      "url": "http://127.0.0.1:8787",
+      "port": 8787
     }
   ]
 }

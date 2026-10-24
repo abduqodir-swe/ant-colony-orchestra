@@ -49,6 +49,17 @@ export const EVENTS = {
   TASK_COMPLETED: '#4ee07a',
   COMMIT_PUSHED: '#5fd0f5',
   PLAN_UPDATED: '#f2a43a',
+  // backend run lifecycle
+  TASK_QUEUED: '#8d97a8',
+  RUN_STARTED: '#8b7cff',
+  TASK_ASSIGNED: '#5fb0ff',
+  TOOL_FAILED: '#e0503c',
+  TEST_FAILED: '#e0503c',
+  AGENT_ERROR: '#e0503c',
+  RUN_COMPLETED: '#4ee07a',
+  RUN_FAILED: '#e0503c',
+  RUN_CANCELLED: '#8d97a8',
+  RUN_INTERRUPTED: '#f2a43a',
 };
 
 export const ROLE_EVENTS = {
