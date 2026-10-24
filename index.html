@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ant Colony — AI Agent Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="office.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <a class="logo" href="index.html">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2 21 7v10l-9 5-9-5V7z" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <path d="M12 7 16.5 9.5v5L12 17l-4.5-2.5v-5z" fill="currentColor" opacity=".55" />
+        </svg>
+        <span>
+          <strong>ANT COLONY</strong>
+          <small>AI SWARM</small>
+        </span>
+      </a>
+      <div class="chips" id="chips"></div>
+      <nav class="nav">
+        <span class="pill soon" title="Скоро">Язык</span>
+        <span class="pill soon" title="Скоро">Инструменты</span>
+        <span class="pill soon gold" title="Скоро">Рейтинг AI</span>
+        <span class="pill soon" title="Скоро">Роли</span>
+        <span class="pill soon" title="Скоро">Настройки</span>
+        <a class="pill active" href="index.html">Colony 2D</a>
+        <a class="pill" href="lab.html">Character Lab</a>
+      </nav>
+    </header>
+
+    <div class="app">
+      <section class="panel scene-panel">
+        <div class="tabs">
+          <button class="tab active" type="button">Обзор</button>
+          <button class="tab" type="button" disabled title="Скоро">Команда</button>
+          <button class="tab" type="button" disabled title="Скоро">Пространства</button>
+        </div>
+        <div class="scene-wrap" id="scene-wrap">
+          <canvas id="office"></canvas>
+        </div>
+      </section>
+
+      <aside class="side">
+        <section class="panel inspector" id="inspector"></section>
+        <section class="panel list-panel">
+          <header class="ph">
+            <h2 id="agents-title">Agents</h2>
+            <select id="role-filter" aria-label="Фильтр по роли"></select>
+          </header>
+          <ul class="agents" id="agent-list"></ul>
+        </section>
+        <section class="panel list-panel">
+          <header class="ph">
+            <h2>Event feed</h2>
+            <button class="ghost" id="feed-pause" type="button">Pause</button>
+          </header>
+          <ul class="feed" id="feed"></ul>
+        </section>
+      </aside>
+
+      <section class="bottom">
+        <section class="panel card" id="procs"></section>
+        <section class="panel card" id="reqs"></section>
+        <section class="panel card" id="task"></section>
+        <section class="panel card" id="approvals"></section>
+        <section class="panel card" id="system"></section>
+      </section>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

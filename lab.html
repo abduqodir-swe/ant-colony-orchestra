@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ant Colony — Character Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <h1>CHARACTER LAB</h1>
+        <p class="sub">Ant Worker · процедурный пиксель-арт</p>
+      </div>
+      <a class="back" href="index.html">← Офис</a>
+      <div class="legend" id="palette"></div>
+    </header>
+
+    <main>
+      <section class="stage-wrap">
+        <div class="stage" id="stage-box">
+          <canvas id="stage"></canvas>
+          <div class="stage-meta" id="stage-meta"></div>
+        </div>
+
+        <aside class="panel">
+          <div class="group">
+            <span class="label">Анимация</span>
+            <div class="seg" id="anim"></div>
+          </div>
+          <div class="group">
+            <span class="label">Вид</span>
+            <div class="seg" id="view"></div>
+          </div>
+          <div class="group">
+            <span class="label">Направление</span>
+            <div class="seg" id="facing"></div>
+          </div>
+          <div class="group">
+            <span class="label">Высота спрайта</span>
+            <div class="seg" id="res"></div>
+          </div>
+          <div class="group">
+            <span class="label">Скорость</span>
+            <div class="seg" id="speed"></div>
+          </div>
+          <div class="group">
+            <span class="label">Фон</span>
+            <div class="seg" id="bg"></div>
+          </div>
+          <div class="group checks">
+            <label><input type="checkbox" id="grid" /> Пиксельная сетка</label>
+            <label><input type="checkbox" id="smooth" /> Без покадровости</label>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <h2>ANIMATION SHEET</h2>
+        <div class="sheet" id="sheet"></div>
+      </section>
+
+      <section>
+        <h2>IN GAME · масштаб офиса</h2>
+        <canvas class="floor" id="floor"></canvas>
+      </section>
+    </main>
+
+    <script type="module" src="src/lab.js"></script>
+  </body>
+</html>

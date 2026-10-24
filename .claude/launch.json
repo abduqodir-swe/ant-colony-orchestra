@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ant-colony",
+      "url": "http://127.0.0.1:4173",
+      "port": 4173
+    }
+  ]
+}
